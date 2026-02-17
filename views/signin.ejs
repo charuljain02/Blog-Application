@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+    <title>Sign In</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+
+    <div class="container mt-5">
+
+        <h2>Sign In</h2>
+
+        <!-- IMPORTANT: FORM START -->
+        <form action="/user/signin" method="POST">
+
+            <div class="mb-3 mt-4">
+                <label class="form-label">Email address</label>
+                <input 
+                  type="email" 
+                  class="form-control" 
+                  name="email"
+                  required
+                >
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input 
+                  type="password" 
+                  class="form-control" 
+                  name="password"
+                  required
+                >
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Submit
+            </button>
+
+        </form>
+        <!-- FORM END -->
+
+    </div>
+
+    <%- include('./partials/script') %>
+</body>
+</html>

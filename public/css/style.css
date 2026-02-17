@@ -1,0 +1,102 @@
+/* ================= GLOBAL ================= */
+
+body {
+  background-color: #f4f6f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+/* ================= CARDS ================= */
+
+.card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-primary {
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+/* ================= BLOG PAGE ================= */
+
+h1 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+img {
+  border-radius: 12px;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* ================= COMMENT SECTION ================= */
+
+textarea {
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #0d6efd;
+}
+
+.comment-box {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ================= DELETE BUTTON ================= */
+
+button[style*="background:red"] {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+/* ================= FORMS ================= */
+
+form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}

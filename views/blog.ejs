@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= blog.title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ================= Blog Title ================= -->
+        <h1><%= blog.title %></h1>
+
+        <!-- ================= Cover Image ================= -->
+        <% if (blog.coverImageURL) { %>
+            <img 
+                src="/<%= blog.coverImageURL %>" 
+                alt="Cover Image" 
+                style="max-width: 600px; margin: 20px 0;"
+            >
+        <% } %>
+
+        <!-- ================= Blog Content ================= -->
+        <p><%= blog.body %></p>
+
+        <!-- ================= Delete Button ================= -->
+        <% if (user && blog.createdBy.toString() === user._id.toString()) { %>
+            <form action="/blog/<%= blog._id %>/delete" method="POST">
+                <button type="submit" style="background:red; color:white;">
+                    Delete Blog
+                </button>
+            </form>
+        <% } %>
+
+        <hr>
+
+        <!-- ================= Comment Section ================= -->
+        <h2>Comments</h2>
+
+        <!-- If User Logged In -->
+        <% if (user) { %>
+            <form action="/blog/comment/<%= blog._id %>" method="POST">
+                <textarea 
+                    name="content" 
+                    rows="4" 
+                    cols="50" 
+                    required 
+                    placeholder="Write your comment here..."
+                ></textarea>
+                <br>
+                <button type="submit">Post Comment</button>
+            </form>
+        <% } else { %>
+            <p>
+                <a href="/user/signin">Login</a> to post a comment.
+            </p>
+        <% } %>
+
+        <br>
+
+        <!-- ================= Display Comments ================= -->
+        <% if (comments.length === 0) { %>
+            <p>No comments yet.</p>
+        <% } %>
+
+        <% comments.forEach(comment => { %>
+            <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+                <strong>
+                    <%= comment.createdBy.fullName %>
+                </strong>
+                <p><%= comment.content %></p>
+            </div>
+        <% }) %>
+
+    </div>
+
+</body>
+</html>
