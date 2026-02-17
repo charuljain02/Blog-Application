@@ -101,5 +101,4 @@ Pagination
 Charul Jain
 GitHub: https://github.com/charuljain02
 
-## 📂 Project Structure
 
