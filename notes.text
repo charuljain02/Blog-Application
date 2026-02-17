@@ -1,5 +1,1 @@
-//intalling ejs
-//we will go with server site rendering
-//make env file to operate it anyt port
-//isme hum views ke andar partial folde ka use kar rahe hai for repearted component with this we use bootstrap too we import cdn via link and script in homw .ejs
-//we will use crypto hash for hashing the password
+
